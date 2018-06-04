@@ -71,20 +71,20 @@ public class elevators {
 						}
 						System.out.println("Arriving at Floor "+currentFloor + " doors are now Opening(O)");
 					}
-				try {
-					//wait 5 seconds
-					Thread.sleep(5000);
-				}
-				catch (InterruptedException e) {
-					e.printStackTrace();
-				}		
+		try {
+			//wait 5 seconds
+			Thread.sleep(5000);
+		}
+		catch (InterruptedException e) {
+			e.printStackTrace();
+		}		
+			
+		}
 				
-				}
-				
-			}
+	}
 
 			
-	}
+}
 			
 		
 	
