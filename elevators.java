@@ -29,6 +29,7 @@ public class elevators {
 			
 		System.out.println("The Elevator doors are Open(O) and it is located on Floor: "+ currentFloor);
 		for (int i=0; i<10; i++) {
+			currentFloor = floorArray[i];
 			Random generator = new Random();//Random generator
 			int randomFloor = generator.nextInt(pushArray.length);//Selects Random floor from pushArray
 			if (randomFloor==0) {
@@ -70,13 +71,13 @@ public class elevators {
 						}
 						System.out.println("Arriving at Floor "+currentFloor + " doors are now Opening(O)");
 					}
-					try {
-						//wait 5 seconds
-						Thread.sleep(5000);
-					}
-					catch (InterruptedException e) {
-						e.printStackTrace();
-					}		
+				try {
+					//wait 5 seconds
+					Thread.sleep(5000);
+				}
+				catch (InterruptedException e) {
+					e.printStackTrace();
+				}		
 				
 				}
 				
