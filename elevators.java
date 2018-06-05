@@ -7,7 +7,7 @@ public class elevators3 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] elevatorArray = {0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2};
-		int[] pushArray = {0,1,2};
+		int[] pushArray = {0,1,2};//3 options that can be generated from Random generator for floor selection
 		String[] floorArray = {"Basement Floor", "1st Floor", "2nd Floor"};
 		String[] eTravel = {"Traveling Down 2 Floors", "Traveling Down 1 Floor", "Staying on this Floor", "Traveling Up 1 Floor", "Traveling Up 2 Floors"};
 		int elevatorFloor = 0;
