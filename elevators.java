@@ -6,13 +6,12 @@ public class elevators3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] elevatorArray = {0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2};
 		int[] pushArray = {0,1,2};
 		String[] floorArray = {"Basement Floor", "1st Floor", "2nd Floor"};
 		String[] eTravel = {"Traveling Down 2 Floors", "Traveling Down 1 Floor", "Staying on this Floor", "Traveling Up 1 Floor", "Traveling Up 2 Floors"};
-		int elevatorFloor = elevatorArray[0];
+		int elevatorFloor = 0;
 		String DistanceTraveled = null;
-		Random generator = new Random();//Random floor request generator
+		Random generator = new Random();//Floor selection is generated at Random using the Random Generator with the pushArray
 		int randomButtonPush = 0;
 		
 		for(int i=0; i<10; i++) {
@@ -71,7 +70,7 @@ public class elevators3 {
 						e.printStackTrace();
 					}
 				}
-			
+				System.out.println("=================================================================================");
 			}
 			while(elevatorFloor==1) {
 				randomButtonPush = generator.nextInt(pushArray.length);
@@ -130,7 +129,7 @@ public class elevators3 {
 					}
 				}
 				
-			
+				System.out.println("=================================================================================");
 			}
 			while(elevatorFloor==2) {
 				randomButtonPush = generator.nextInt(pushArray.length);
@@ -173,7 +172,7 @@ public class elevators3 {
 						e.printStackTrace();
 					}
 				}
-			
+				System.out.println("=================================================================================");
 			}
 			
 		}
