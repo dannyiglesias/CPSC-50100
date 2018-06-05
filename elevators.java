@@ -7,19 +7,21 @@ public class elevators3 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] elevatorArray = {0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2};
-		int[] pushArray = {0,1,2};//3 options that can be generated from Random generator for floor selection
+		int[] pushArray = {0,1,2};
 		String[] floorArray = {"Basement Floor", "1st Floor", "2nd Floor"};
 		String[] eTravel = {"Traveling Down 2 Floors", "Traveling Down 1 Floor", "Staying on this Floor", "Traveling Up 1 Floor", "Traveling Up 2 Floors"};
-		int elevatorFloor = 0;
+		int elevatorFloor = elevatorArray[0];
 		String DistanceTraveled = null;
-		elevatorFloor = elevatorArray[0];
+		//elevatorFloor = elevatorArray[0];
+		Random generator = new Random();//Random floor request generator
+		int randomButtonPush = 0;
 		
-				
 		for(int i=0; i<10; i++) {
 			//elevatorFloor = elevatorArray[0];
-			Random generator = new Random();//Random floor request generator
-			int randomButtonPush = generator.nextInt(pushArray.length);//Selects Random floor from pushArray
-			while(elevatorArray[i]==0) {
+			//Random generator = new Random();//Random floor request generator
+			//int randomButtonPush = generator.nextInt(pushArray.length);//Selects Random floor from pushArray
+			while(elevatorArray[i]==elevatorArray[0]) {
+				randomButtonPush = generator.nextInt(pushArray.length);
 				if(randomButtonPush==0) {
 					DistanceTraveled = eTravel[2];
 					//elevatorFloor=0;
@@ -81,7 +83,8 @@ public class elevators3 {
 				}
 			
 			}
-			while(elevatorArray[i]==1) {
+			while(elevatorArray[i]==elevatorArray[1]) {
+				randomButtonPush = generator.nextInt(pushArray.length);
 				if(randomButtonPush==0) {
 					DistanceTraveled = eTravel[1];
 					//elevatorFloor=0;
@@ -144,7 +147,8 @@ public class elevators3 {
 				
 			
 			}
-			while(elevatorArray[i]==2) {
+			while(elevatorArray[i]==elevatorArray[2]) {
+				randomButtonPush = generator.nextInt(pushArray.length);
 				if(randomButtonPush==0) {
 					DistanceTraveled = eTravel[0];
 					//elevatorFloor=0;
