@@ -6,6 +6,9 @@ public class elevators {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		//There is 1 Elevator that will Start on the Bastement level and will begin moving to different floors depending on the floor calling
+		//for the elevator.  Random Generator will be used to randomly select the Basement Floor, 1st Floor, and 2nd Floor.  The elevator will then travel to 
+		//it's next destination based on the floor it currently resides at and the Random floor selected by the generator.  
 		int[] pushArray = {0,1,2};
 		String[] floorArray = {"Basement Floor", "1st Floor", "2nd Floor"};
 		String[] eTravel = {"Traveling Down 2 Floors", "Traveling Down 1 Floor", "Staying on this Floor", "Traveling Up 1 Floor", "Traveling Up 2 Floors"};
