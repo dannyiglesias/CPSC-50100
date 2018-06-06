@@ -14,13 +14,13 @@ public class elevators3 {
 		Random generator = new Random();//Floor selection is generated at Random using the Random Generator with the pushArray
 		int randomButtonPush = 0;
 		
-		for(int i=0; i<10; i++) {
+		for(int i=0; i<9; i++) {
 			while(elevatorFloor==0) {
 				randomButtonPush = generator.nextInt(pushArray.length);
 				if(randomButtonPush==0) {
 					DistanceTraveled = eTravel[2];
 					elevatorFloor = 0;
-					System.out.println("Elevator is located on the "+floorArray[0] + "\nThe Elevator will be "+ DistanceTraveled);
+					System.out.println("Elevator is now located on the "+floorArray[0] + "\nThe Elevator will be "+ DistanceTraveled);
 					try {
 						//wait 2 seconds
 						Thread.sleep(2000);
@@ -28,11 +28,13 @@ public class elevators3 {
 					catch(InterruptedException e) {
 						e.printStackTrace();
 					}
+					System.out.println("=================================================================================");
+					break;
 				}
 				else if(randomButtonPush==1) {
 					DistanceTraveled = eTravel[3];
 					elevatorFloor = 1;
-					System.out.println("Elevator is located on the "+floorArray[0] + "\nThe Elevator will be " + DistanceTraveled + " to the " + floorArray[1]);
+					System.out.println("Elevator is now located on the "+floorArray[0] + "\nThe Elevator will be " + DistanceTraveled + " to the " + floorArray[1]);
 					try {
 						//wait 2 seconds
 						Thread.sleep(2000);
@@ -48,12 +50,14 @@ public class elevators3 {
 					catch(InterruptedException e) {
 						e.printStackTrace();
 					}
+					System.out.println("=================================================================================");
+					break;
 					
 				}
 				else if(randomButtonPush==2) {
 					DistanceTraveled = eTravel[4];
 					elevatorFloor = 2;
-					System.out.println("Elevator is located on the "+ floorArray[0] + "\nThe Elevator will be " + DistanceTraveled + " to the " + floorArray[2]);
+					System.out.println("Elevator is now located on the "+ floorArray[0] + "\nThe Elevator will be " + DistanceTraveled + " to the " + floorArray[2]);
 					try {
 						//wait 4 seconds
 						Thread.sleep(4000);
@@ -69,15 +73,17 @@ public class elevators3 {
 					catch(InterruptedException e) {
 						e.printStackTrace();
 					}
+					System.out.println("=================================================================================");
+					break;
 				}
-				System.out.println("=================================================================================");
+				
 			}
 			while(elevatorFloor==1) {
 				randomButtonPush = generator.nextInt(pushArray.length);
 				if(randomButtonPush==0) {
 					DistanceTraveled = eTravel[1];
 					elevatorFloor = 0;
-					System.out.println("Elevator is located on the "+floorArray[1] + "\nThe Elevator will be "+ DistanceTraveled + " to the " + floorArray[0]);
+					System.out.println("Elevator is now located on the "+floorArray[1] + "\nThe Elevator will be "+ DistanceTraveled + " to the " + floorArray[0]);
 					try {
 						//wait 2 seconds
 						Thread.sleep(2000);
@@ -93,11 +99,13 @@ public class elevators3 {
 					catch(InterruptedException e) {
 						e.printStackTrace();
 					}
+					System.out.println("=================================================================================");
+					break;
 				}
 				else if(randomButtonPush==1) {
 					DistanceTraveled = eTravel[2];
 					elevatorFloor = 1;
-					System.out.println("Elevator is located on the "+floorArray[1] + "\nThe Elevator will be " + DistanceTraveled);
+					System.out.println("Elevator is now located on the "+floorArray[1] + "\nThe Elevator will be " + DistanceTraveled);
 					try {
 						//wait 2 seconds
 						Thread.sleep(2000);
@@ -105,13 +113,14 @@ public class elevators3 {
 					catch(InterruptedException e) {
 						e.printStackTrace();
 					}
-					
+					System.out.println("=================================================================================");
+					break;
 					
 				}
 				else if(randomButtonPush==2) {
 					DistanceTraveled = eTravel[3];
 					elevatorFloor = 2;
-					System.out.println("Elevator is located on the "+ floorArray[1] + "\nThe Elevator will be " + DistanceTraveled + " to the " + floorArray[2]);
+					System.out.println("Elevator is now located on the "+ floorArray[1] + "\nThe Elevator will be " + DistanceTraveled + " to the " + floorArray[2]);
 					try {
 						//wait 2 seconds
 						Thread.sleep(2000);
@@ -127,16 +136,18 @@ public class elevators3 {
 					catch(InterruptedException e) {
 						e.printStackTrace();
 					}
+					System.out.println("=================================================================================");
+					break;
 				}
 				
-				System.out.println("=================================================================================");
+				
 			}
 			while(elevatorFloor==2) {
 				randomButtonPush = generator.nextInt(pushArray.length);
 				if(randomButtonPush==0) {
 					DistanceTraveled = eTravel[0];
 					elevatorFloor = 0;
-					System.out.println("Elevator is located on the "+floorArray[2] + "\nThe Elevator will be "+ DistanceTraveled + " to the " + floorArray[0]);
+					System.out.println("Elevator is now located on the "+floorArray[2] + "\nThe Elevator will be "+ DistanceTraveled + " to the " + floorArray[0]);
 					try {
 						//wait 4 seconds
 						Thread.sleep(4000);
@@ -145,11 +156,13 @@ public class elevators3 {
 						e.printStackTrace();
 					}
 					System.out.println("Arriving at the " + floorArray[0]);
+					System.out.println("=================================================================================");
+					break;
 				}
 				else if(randomButtonPush==1) {
 					DistanceTraveled = eTravel[1];
 					elevatorFloor = 1;
-					System.out.println("Elevator is located on the "+floorArray[2] + "\nThe Elevator will be " + DistanceTraveled + " to the " + floorArray[1]);
+					System.out.println("Elevator is now located on the "+floorArray[2] + "\nThe Elevator will be " + DistanceTraveled + " to the " + floorArray[1]);
 					try {
 						//wait 2 seconds
 						Thread.sleep(2000);
@@ -158,12 +171,13 @@ public class elevators3 {
 						e.printStackTrace();
 					}
 					System.out.println("Arriving at the " + floorArray[1]);
-					
+					System.out.println("=================================================================================");
+					break;
 				}
 				else if(randomButtonPush==2) {
 					DistanceTraveled = eTravel[2];
 					elevatorFloor = 2;
-					System.out.println("Elevator is located on the "+ floorArray[2] + "\nThe Elevator will be " + DistanceTraveled);
+					System.out.println("Elevator is now located on the "+ floorArray[2] + "\nThe Elevator will be " + DistanceTraveled);
 					try {
 						//wait 2 seconds
 						Thread.sleep(2000);
@@ -171,8 +185,10 @@ public class elevators3 {
 					catch(InterruptedException e) {
 						e.printStackTrace();
 					}
+					System.out.println("=================================================================================");
+					break;
 				}
-				System.out.println("=================================================================================");
+				
 			}
 			
 		}
