@@ -2,7 +2,7 @@ package week3;
 
 import java.util.Random;
 
-public class elevators3 {
+public class elevators {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
