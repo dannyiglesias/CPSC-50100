@@ -1,6 +1,7 @@
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
-public class order {
+public class orderappsample {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -8,6 +9,7 @@ public class order {
 	//double totalcost=0;
 	double tax=0.05;
 	double finalcost=0;
+	DecimalFormat df = new DecimalFormat("#.##");
 	int menuItem=0;
 	int ordertype=0; //initializes order type Delivery or Pick-Up
 	Scanner input = new Scanner(System.in);
@@ -63,7 +65,7 @@ public class order {
 				}
 			}
 			
-			System.out.println("Your total comes to $"+finalcost+" including tax and delivery \nand will be ready in about 15 minutes.  \nThank you for choosing Flyers!");		
+			System.out.println("Your total comes to $"+df.format(finalcost)+" including tax and delivery \nand will be ready in about 15 minutes.  \nThank you for choosing Flyers!");		
 		}
 
 			
@@ -101,7 +103,7 @@ public class order {
 				}
 			}
 			
-			System.out.println("Your total comes to $"+finalcost+" including tax and delivery \nand will be ready in about 15 minutes.  \nThank you for choosing Flyers!");		
+			System.out.println("Your total comes to $"+df.format(finalcost)+" including tax and delivery \nand will be ready in about 15 minutes.  \nThank you for choosing Flyers!");		
 		}
 			
 		else if(zipcode >= 60452 || zipcode <= 60440) {
@@ -143,7 +145,7 @@ public class order {
 					}
 				}
 				
-				System.out.println("Your total comes to $"+finalcost+" including tax \nand will be ready in about 15 minutes.  \nThank you for choosing Flyers!");	
+				System.out.println("Your total comes to $"+df.format(finalcost)+" including tax \nand will be ready in about 15 minutes.  \nThank you for choosing Flyers!");	
 			}
 
 		}
@@ -181,11 +183,10 @@ public class order {
 			}
 		}
 		
-		System.out.println("Your total comes to $"+finalcost+" including tax \nand will be ready in about 15 minutes.  \nThank you for choosing Flyers!");	
+		System.out.println("Your total comes to $"+df.format(finalcost)+" including tax \nand will be ready in about 15 minutes.  \nThank you for choosing Flyers!");	
 	}
 	}
 }
 	
-		
 		
 
