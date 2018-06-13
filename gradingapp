@@ -1,10 +1,15 @@
 import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 //import java.util.stream;
 import java.util.Scanner;
 public class gradingapp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		String FinalScore = null; //initialize FinalScore variable
+		int sum=0; //initialize sum variable
+		
 		Scanner score = new Scanner(System.in);
 		
 		//Input Exam Scores and create Array
@@ -30,8 +35,54 @@ public class gradingapp {
 				assignGrade[i]=score.nextLine();
 		}
 		
+		//Convert String array "examGrade" and "assignGrade" to int array "eScores" and "aScores"
+		int[] eScores = new int[examGrade.length];
+		for(int i=0; i<examGrade.length; i++){
+			eScores[i] = Integer.parseInt(examGrade[i]);
+		}
+		int[] aScores = new int[assignGrade.length];
+		for(int i=0; i<assignGrade.length; i++){
+			aScores[i] = Integer.parseInt(assignGrade[i]);
+		}
+		
+		
+		int eSum = Arrays.stream(eScores).sum();
+		int aSum = Arrays.stream(aScores).sum();
+		
+		
+	
+		
+		sum = eSum + aSum;
+		
+		if(sum >= 450){
+			FinalScore = "A";
+		}
+		else if(sum >= 400){
+			FinalScore = "B";
+		}
+		else if(sum >= 350){
+			FinalScore = "C";
+		}
+		else if(sum >= 300){
+			FinalScore = "D";
+		}
+		else if(sum <300){
+			FinalScore = "F";
+		}
+		
+		int student[] = {305, 320, 336, 357, 361, 383, 402, 413, 425, 426};
+		
+		
+		student[student.length-1] = sum;
+		
+		
+	
+	System.out.println(Arrays.toString(student));
 	System.out.println("Scores Recorded for Exams 1-4: " + Arrays.toString(examGrade));
 	System.out.println("Scores Recorded for Assignments 1-4: " + Arrays.toString(assignGrade));
+	System.out.println("The Total for Exams and Assignments are: " + sum);
+	System.out.println("The Final Grade in the Course is :" + FinalScore);
+	
 
 	}
 
