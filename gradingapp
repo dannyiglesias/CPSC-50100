@@ -1,7 +1,4 @@
 import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
-//import java.util.stream;
 import java.util.Scanner;
 public class gradingapp {
 
@@ -54,6 +51,7 @@ public class gradingapp {
 		//Sum up the arrays for finalscore 
 		sum = eSum + aSum;
 		
+		
 		//Grades the student's final score based on initial scale
 		if(sum >= 450){
 			FinalScore = "A";
@@ -79,23 +77,19 @@ public class gradingapp {
 		
 		
 		//Finds the mean of the student array
-		double dev = 0;
 		int studentSum = 0;
 		for(int i=0; i<student.length; i++) {
 			studentSum += student[i];
 			
 		}
 		
-		double SD = 0;
-		
 		int i = 0;
 				
-		//Finds the sqrt of the mean
+		//Finds the mean of the student array
 		double studentAvg = studentSum / student.length;
-		int curveSum = 0;
 		String curveScore = null;
 		
-		//Finds the standard deviation
+		//Finds the standard deviation of the student array
 		double idev = 0;
 		double devSum = 0;
 		for(i=0; i<student.length; i++) {
@@ -105,53 +99,86 @@ public class gradingapp {
 		double variance = (((student.length*devSum)-(idev*idev))/(student.length*student.length));
 		double stdev = Math.sqrt(variance);
 		
-		dev = Math.sqrt(devSum/10);
-		
-		System.out.println(devSum);
-		System.out.println(dev);
-		
-		//Establishes new grading scale based on mean and standard deviation
-		double curveA = Math.round(studentAvg + stdev);
-		double curveB = Math.round(studentAvg + (stdev/2));
-		double curveC = Math.round(studentAvg);
-		double curveD = Math.round(studentAvg - (stdev/2));
-		
-		
-		//Grades the student's final score against new scale
-		if(sum >= curveA){
-			curveScore = "A";
-		}
-		else if(sum >= curveB){
-			curveScore = "B";
-		}
-		else if(sum >= curveC){
-			curveScore = "C";
-		}
-		else if(sum >= curveD){
-			curveScore = "D";
-		}
-		else if(sum < curveD ){
-			curveScore = "F";
-		}
+		//Asking how generous the professor wants to be
+		System.out.println("How generous do you want to be? (SC for Standard Curve or GC for Generous Curve)");
+		String generosity = null;
+		generosity = score.next();
 	
+		//Grades student's score against new scales
+		if(generosity.equals("SC")){
+			double curveA = Math.round(studentAvg + (stdev*2));
+			double curveB = Math.round(studentAvg + stdev);
+			double curveC = Math.round(studentAvg);
+			double curveD = Math.round(studentAvg - (stdev));
+			if(sum >= curveA){
+				curveScore = "A";
+			}
+			else if(sum >= curveB){
+				curveScore = "B";
+			}
+			else if(sum >= curveC){
+				curveScore = "C";
+			}
+			else if(sum >= curveD){
+				curveScore = "D";
+			}
+			else if(sum < curveD ){
+				curveScore = "F";
+			}
+			
+			//Results
+			System.out.println("Here are the Exam scores you entered for this student: " + Arrays.toString(examGrade));
+			System.out.println("Here are the Assignments scores you entered for this student: " + Arrays.toString(assignGrade));
+			System.out.println("=======================================================================================================");
+			System.out.println("The Total Score for this student is " + sum + " out of a possible 500");
+			System.out.println("The grading scale is as follows: \nA is >= 450 \nB is >= 400 \nC is >= 350 \nD is >= 300 \nF is <  300");
+			System.out.println("The Final Grade for this student on the grading scale above is an " + FinalScore);
+			System.out.println("=======================================================================================================");
+			System.out.println("To determine this student's grade after the curve is applied we will calculate the Standard Deviation of the Total Score distribution for the class.");
+			System.out.println("The Total Score distribution for this class is :" + Arrays.toString(student));
+			System.out.println("The mean of these scores is :" + studentAvg + "\nThe Standard Deviation is :" + stdev);
+			System.out.println("========================================================================================================");
+			System.out.println("The new grading scale is as follows: \nA is >= " + curveA + "\nB is >= " + curveB + "\nC is >= " + curveC + "\nD is >= " + curveD + "\nF is <  " + curveD);
+			System.out.println("The Final Grade for this student on the grading scale above is an " + curveScore);
+			
+		}
+		else if(generosity.equals("GC")){
+			double curveA = Math.round(studentAvg + stdev);
+			double curveB = Math.round(studentAvg);
+			double curveC = Math.round(studentAvg - (stdev));
+			double curveD = Math.round(studentAvg - (stdev*2));
+			if(sum >= curveA){
+				curveScore = "A";
+			}
+			else if(sum >= curveB){
+				curveScore = "B";
+			}
+			else if(sum >= curveC){
+				curveScore = "C";
+			}
+			else if(sum >= curveD){
+				curveScore = "D";
+			}
+			else if(sum < curveD ){
+				curveScore = "F";
+			}
 		
-	System.out.println(dev);
-	//Results
-	System.out.println("Exam Scores for this student: " + Arrays.toString(examGrade));
-	System.out.println("Assignments scores for this student: " + Arrays.toString(assignGrade));
-	System.out.println("=======================================================================================================");
-	System.out.println("The Total Score for this student is " + sum + " out of a possible 500");
-	System.out.println("The grading scale is as follows: \nA is >= 450 \nB is >= 400 \nC is >= 350 \nD is >= 300 \nF is < 300");
-	System.out.println("The Final Grade for this student without a cruve is an " + FinalScore);
-	System.out.println("=======================================================================================================");
-	System.out.println("To determine this student's grade after the curve is applied we will calculate the Standard Deviation of the Total Score distribution for the class.");
-	System.out.println("The Total Score distribution for this class is :" + Arrays.toString(student));
-	System.out.println("The mean of these scores is :" + studentAvg + "\nThe Standard Deviation is :" + stdev);
-	System.out.println("========================================================================================================");
-	System.out.println("The new grading scale is as follows: \nA is >= " + curveA + "\nB is >= " + curveB + "\nC is >= " + curveC + "\nD is >= " + curveD + "\nF is < " + curveD);
-	System.out.println("The Final Grade once the curve is applied is :" + curveScore);
+			//Results
+			System.out.println("Here are the Exam scores you entered for this student: " + Arrays.toString(examGrade));
+			System.out.println("Here are the Assignments scores you entered for this student: " + Arrays.toString(assignGrade));
+			System.out.println("=======================================================================================================");
+			System.out.println("The Total Score for this student is " + sum + " out of a possible 500");
+			System.out.println("The grading scale is as follows: \nA is >= 450 \nB is >= 400 \nC is >= 350 \nD is >= 300 \nF is <  300");
+			System.out.println("The Final Grade for this student on the grading scale above is an " + FinalScore);
+			System.out.println("=======================================================================================================");
+			System.out.println("To determine this student's grade after the curve is applied we will calculate the Standard Deviation of the Total Score distribution for the class.");
+			System.out.println("The Total Score distribution for this class is :" + Arrays.toString(student));
+			System.out.println("The mean of these scores is :" + studentAvg + "\nThe Standard Deviation is :" + stdev);
+			System.out.println("========================================================================================================");
+			System.out.println("The new grading scale is as follows: \nA is >= " + curveA + "\nB is >= " + curveB + "\nC is >= " + curveC + "\nD is >= " + curveD + "\nF is <  " + curveD);
+			System.out.println("The Final Grade for this student on the grading scale above is an " + curveScore);
 	
 
+		}
 	}
-
 }
