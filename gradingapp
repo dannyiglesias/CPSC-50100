@@ -72,7 +72,7 @@ public class gradingapp {
 		}
 		
 		//Student array contains all the final scores for the students
-		double student[] = {350, 356, 367, 372, 378, 383, 402, 413, 415, 0};
+		int student[] = {350, 356, 367, 372, 378, 383, 402, 413, 415, 0};
 		
 		//Appends sum to the end of Student array
 		student[student.length-1] = sum;
