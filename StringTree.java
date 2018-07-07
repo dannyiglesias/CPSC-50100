@@ -64,14 +64,14 @@ public class StringTree {
 		}
 	}
 
-	// print the words in alphabetic order
+	// prints the words in alphabetic order
 	public void printTree() {
 		inOrder(root);
 	}
 	
 	public static void main(String[] args) {
-		// create tree
-		String input1 = null;
+	    // create tree
+	    String input1 = null;
 	    String input2 = null;
 	    String input3 = null;
 	    String input4 = null;
